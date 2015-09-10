@@ -3,7 +3,7 @@
 <span class="category">Category</span>
 <h1 class="post-title"><%= @post.title %></h1>
 <p class="post-date"><%= @post.date_added %> &middot; Rachel Okimoto</p>
-<p class="post-body"><%= @post.body.html_safe %></p>
+<p class="post-body"><%= markdown @post.body%></p>
 
 <div class="share center">
   <p class="share-label">Share this article</p>

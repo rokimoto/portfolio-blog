@@ -1,0 +1,19 @@
+<% for post in @posts %>
+  <div class="post-item row">
+    <%= link_to post_path(post) do %>
+      <div class="col-md-4">
+        <div class="hero-thumb">
+          <span class="category">Category</span>
+          <%= image_tag post.picture.url, class: "img-responsive" if post.picture? %>
+        </div>
+      </div>
+    <% end %>
+    <div class="col-md-8">
+      <p class="post-date"><%= post.date_added %></p>
+      <h1 class="post-title"><%= link_to post.title, post_path(post) %></h1>
+      <p class="post-preview"><%= truncate(ActionView::Base.full_sanitizer.sanitize(post.body), :length => 200, :separator => ' ') %></p>
+    </div>
+  </div>
+<% end %>
+
+<%= link_to 'New Post', new_post_path %>

@@ -1,0 +1,23 @@
+// Fonts
+$font-family--primary       : 'Lato', sans-serif;
+$font-family--headers       : 'Fjalla One', sans-serif;
+$font-family--wide          : 'Questrial', sans-serif;
+$font-size--primary         : 1rem;
+
+// Color Palette
+$medium-grey                : #999999;
+$dark-grey                  : #4d4d4d;
+
+
+// Transitions
+$transition--primary        : all 0.3s ease;
+$transition--secondary      : all 0.4s cubic-bezier(0.2, 1, 0.3, 1);
+$transition--secondary-slow : all 0.8s cubic-bezier(0.2, 1, 0.3, 1);
+ 
+
+// Layout
+$spacing--xxs               : 5px;
+
+
+// Breakpoints
+$small-mobile-max           : 416px;

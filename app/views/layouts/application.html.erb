@@ -7,6 +7,19 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+
+  <script type="text/javascript">
+    <!--
+    var unityObjectUrl = "http://webplayer.unity3d.com/download_webplayer-3.x/3.0/uo/UnityObject2.js";
+    if (document.location.protocol == 'https:')
+        unityObjectUrl = unityObjectUrl.replace("http://", "https://ssl-");
+    document.write('<script type="text/javascript" src="' + unityObjectUrl + '"></script>');
+
+    var u = new UnityObject2();
+    u.initPlugin(jQuery("#unityPlayer")[0], "Example.unity3d");
+    -->
+  </script>
+
 </head>
 <body class="<%= controller_name %> <%= action_name %>">
 

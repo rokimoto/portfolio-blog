@@ -1,6 +1,9 @@
 class PostsController < ApplicationController
+
+  before_action :require_user, except: [:show, :index, :feed]
+
   def index
-    @posts = Post.all
+    @posts = Post.all.order("created_at desc").paginate(page: params[:page], per_page: 2)
   end
 
   def new

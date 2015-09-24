@@ -3,6 +3,8 @@
 
 <%= @project.title %>
 <%= @project.description %>
+<%= image_tag @project.preview_image.url, class: "img-responsive" if @project.preview_image? %>
+
 
 <div id="unityPlayer">
     <div class="missing">

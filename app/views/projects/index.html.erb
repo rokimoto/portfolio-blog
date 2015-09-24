@@ -1,3 +1,9 @@
 <h1>Projects#index</h1>
 <p>Find me in app/views/projects/index.html.erb</p>
 
+<% @projects.each do |project| %>
+  <%= project.title %>
+  <%= project.description %>
+  <%= project.file %>
+  <%= image_tag project.preview_image.url, class: "img-responsive" if project.preview_image? %>
+<% end %>

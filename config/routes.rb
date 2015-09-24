@@ -1,8 +1,16 @@
 Rails.application.routes.draw do
 
+  get 'static/about', to: 'static#about', as: :about
+
+  get 'static/contact', to: 'static#contact', as: :contact
+
   get '/admin', to: 'sessions#new', as: :login
   post '/admin', to: 'sessions#create'
   delete '/logout', to:'sessions#destroy', as: :logout
+
+  get 'tags/:tag', to: 'posts#index', as: :tag
+
+  get 'categories', to: 'categories#index'
 
   resources :posts, path: :blog
   resources :projects

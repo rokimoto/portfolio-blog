@@ -22,20 +22,19 @@
 
 </head>
 <body class="<%= controller_name %> <%= action_name %>">
-
+<div class="wrap">
 <div class="container">
 
 <%= render "shared/header" %>
 
-<div class="row">
-  <div class="col-md-10 col-md-offset-1">
 
   <%= yield %>
 
-  </div>
-</div>
 
 </div>
+</div><!--wrap -->
+
+<%= render "shared/footer" %>
 
 </body>
 </html>

@@ -11,6 +11,9 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery-ui/autocomplete
 //= require jquery_ujs
 //= require turbolinks
-//= require_tree .
+//= require jquery
+//= require bootstrap-sprockets
+//= require posts.coffee

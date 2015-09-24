@@ -3,7 +3,11 @@ class PostsController < ApplicationController
   before_action :require_user, except: [:show, :index, :feed]
 
   def index
-    @posts = Post.all.order("created_at desc").paginate(page: params[:page], per_page: 2)
+    if params[:tag]
+      @posts = Post.tagged_with(params[:tag]).paginate(page: params[:page], per_page: 6)
+    else
+      @posts = Post.all.order("created_at desc").paginate(page: params[:page], per_page: 6)
+    end
   end
 
   def new
@@ -53,7 +57,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:title, :body, :picture, :author_id, :slug)
+    params.require(:post).permit(:title, :description, :body, :picture, :author_id, :slug, :tag_list)
   end
 
 end

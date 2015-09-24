@@ -1,13 +1,16 @@
 @import 'config';
 
+.container {
+  width: 1050px;
+}
+
 .center {
   text-align: center;
 }
 
 .pagination {
-  font-family: $font-family--wide;
   font-weight: 600;
-  font-size: 1.6rem;
+  font-size: 1.3rem;
   text-transform: uppercase;
   margin-top: 50px;
 
@@ -23,7 +26,6 @@
 
   a, em {
     background: $light-grey;
-    border-radius: 5px;
   }
 
   em {
@@ -43,7 +45,7 @@
   }
 
   .current {
-    background-color: $dark-grey;
+    background-color: #000;
     color: white;
   }
 
@@ -68,4 +70,12 @@
   width: 35px;
   margin: 0 5px;
   cursor: pointer;
+}
+
+.hide {
+  visibility: hidden;
+}
+
+p {
+  margin: 25px 0;
 }

@@ -1,9 +1,9 @@
 @import 'config';
 
 .header {
-  border-bottom: 1px solid $medium-grey;
+  border-bottom: 1px solid $lighter-grey;
   position: relative;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 }
 
 .logo {
@@ -25,16 +25,23 @@
 
 .nav-item {
   display: inline-block;
-  color: $medium-grey;
+  
   font-size: 1.5rem;
   margin-left: 12px;
   font-family: $font-family--wide;
   text-transform: uppercase;
   padding: 10px 12px;
-  transition: $transition--primary;
+  
+
+  a {
+    color: $medium-grey;
+    text-decoration: none;
+    transition: $transition--primary;
+  }
+
 }
 
-.nav-item:hover {
+.nav-item:hover a {
   color: #000;
   cursor: pointer;
 }
@@ -62,37 +69,20 @@
     margin-right: 3px;
   }
 
-  ul {
-    list-style: none;
+  // ul {
+  //   list-style: none;
 
-    li {
-      display: inline-block;
-      margin-left: 15px;
+  //   li {
+  //     display: inline-block;
+  //     margin-left: 15px;
 
-      ul {
-        li {
-          width: 100%;
-          margin-left: 0;
-        }
-      }
-    }
+  //     ul {
+  //       li {
+  //         width: 100%;
+  //         margin-left: 0;
+  //       }
+  //     }
+  //   }
 
-  }
+  // }
 }
-
-
-// .click-nav {margin:100px auto;width:200px;}
-// .click-nav ul {position:relative;font-weight:900;}
-.click-nav ul li {position:relative;list-style:none;cursor:pointer;}
-.click-nav ul li ul {position:absolute;left:0;right:0; padding-left: 0}
-.click-nav ul .clicker {position:relative; }
-.click-nav ul .clicker:hover {background:$lighter-grey;}
-.click-nav ul .clicker:hover,.click-nav ul .active {background:$lighter-grey;}
-.click-nav img {position:absolute;top:9px;left:12px;}
-.click-nav ul li a {transition:background-color 0.2s ease-in-out;-webkit-transition:background-color 0.2s ease-in-out;
--moz-transition:background-color 0.2s ease-in-out;display:block;padding:8px 10px 8px 40px;background:#FFF;color:#000;text-decoration:none;}
-.click-nav ul li a:hover {background:$lighter-grey;}
-
-// /* Fallbacks */
-// .click-nav .no-js ul {display:none;}
-// .click-nav .no-js:hover ul {display:block;}

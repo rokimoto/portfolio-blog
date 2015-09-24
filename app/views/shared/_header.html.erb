@@ -1,26 +1,21 @@
-<header class="header">
+<header class="header row">
 <%= link_to posts_path do %><div class="logo"></div><% end %>
 
 <ul class="navbar">
-  <li class="nav-item learn-nav">Learn</li>
-  <li class="nav-item">Play</li>
-  <li class="nav-item">About</li>
-  <li class="nav-item">Blog</li>
-  <li class="nav-item">Contact</li>
+  <li class="nav-item"><%= link_to "Blog", posts_path %></li>
+  <li class="nav-item"><%= link_to "About", about_path %></li>
+  <li class="nav-item"><%= link_to "Contact", contact_path %></li>
 </ul>
 
 <% if current_user %>
-  <div class="logged-in click-nav">
-    <ul class="no-js">
-      <li><a href="#" class="clicker"><%= image_tag "torso.svg" %><%= current_user.name %> &#x25BC;</a>
-        <ul>
-          <li><%= link_to "Add Entry", new_post_path %></li></li>
-          <li><a href="#">Settings</a></li>
-          <li><a href="#">Privacy</a></li>
-          <li><a href="#">Help</a></li>
-          <li><%= link_to "Logout", logout_path, method: :delete %></li></li>
-        </ul>
-      </li>
+  <div class="dropdown logged-in">
+    <div id="dLabel" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <%= image_tag "torso.svg" %><%= current_user.name %>
+      <span class="caret"></span>
+    </div>
+    <ul class="dropdown-menu" aria-labelledby="dLabel">
+        <li><%= link_to "Add Entry", new_post_path %></li>
+        <li><%= link_to "Logout", logout_path, method: :delete %></li>
     </ul>
   </div>
 <% end %>

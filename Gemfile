@@ -16,6 +16,10 @@ gem 'coffee-rails', '~> 4.1.0'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
+gem 'jquery-ui-rails'
+
+gem 'bootstrap-sass'
+
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
@@ -40,6 +44,9 @@ gem 'will_paginate'
 
 # Slugs
 gem 'friendly_id', '~> 5.1.0'
+
+# Tags
+gem 'acts-as-taggable-on', '~> 3.4'
 
 # Use Unicorn as the app server
 # gem 'unicorn'

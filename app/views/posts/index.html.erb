@@ -1,23 +1,36 @@
-<% for post in @posts %>
-  <div class="post-item row">
-    <%= link_to post_path(post) do %>
-      <div class="col-md-4">
-        <div class="hero-thumb">
-          <span class="category">Category</span>
-          <%= image_tag post.picture.url, class: "img-responsive" if post.picture? %>
+<div class="row">
+    <%= render "tag_cloud" %>  
+</div>
+
+
+<div class="row">
+  <div class="col-md-9">
+    <% for post in @posts %>
+      <div class="post-item row">
+        <div class="col-md-4 hero-column">
+          <%= link_to post_path(post) do %>
+            <div class="hero-thumb">
+              <%= image_tag post.picture.url, class:  'img-responsive' if post.picture? %>
+            </div>
+          <% end %>
+        </div>
+        
+        <div class="col-md-8">
+          <p class="post-date"><%= post.date_added %></p>
+          <h1 class="post-title"><%= link_to post.title, post_path(post) %></h1>
+          <div class="post-categories">
+            <% post.tag_list.each do |tag| %>
+              <%= link_to tag_path(tag) do %><span class="category"><%= tag %></span><% end %>
+            <% end %>
+          </div>
+          <p class="post-preview"><%= post.description %></p>
         </div>
       </div>
     <% end %>
-    <div class="col-md-8">
-      <p class="post-date"><%= post.date_added %></p>
-      <h1 class="post-title"><%= link_to post.title, post_path(post) %></h1>
-      <p class="post-preview"><%= truncate(ActionView::Base.full_sanitizer.sanitize(post.body), :length => 200, :separator => ' ') %></p>
-    </div>
   </div>
-<% end %>
+
+</div>
 
 <div class="center">
 <%= will_paginate @posts %>
 </div>
-
-<%= link_to 'New Post', new_post_path %>

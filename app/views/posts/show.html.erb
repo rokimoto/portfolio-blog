@@ -1,20 +1,31 @@
+<div class="row">
+  <div class="col-md-9">
+    <h1 class="post-title"><%= @post.title %></h1>
+    <p class="post-preview"><%= @post.description %></p>
+    <p class="post-date"><%= @post.date_added %> &middot; Rachel Okimoto</p>
+    <div class="post-categories">
+      <% @post.tag_list.each do |tag| %>
+        <%= link_to tag_path(tag) do %><span class="category"><%= tag %></span><% end %>
+      <% end %>
+    </div>
+    <div class="post-hero-wrapper">
+    <%= image_tag @post.picture.url, class: "post-hero" if @post.picture? %>
+    </div>
+  
+    <p class="post-body"><%= markdown @post.body%></p>
 
-<%= image_tag @post.picture.url, class: "img-responsive post-hero" if @post.picture? %>
-<span class="category">Category</span>
-<h1 class="post-title"><%= @post.title %></h1>
-<p class="post-date"><%= @post.date_added %> &middot; Rachel Okimoto</p>
-<p class="post-body"><%= markdown @post.body%></p>
+    <div class="share center">
+      <p class="share-label">Share this article</p>
+      <a onclick="javascript:window.open('http://twitter.com/share?text=<%= @post.title %> via @rachelokimoto - &amp;url=<%= url_for([@post, {only_path: false}]) %>', '_blank', 'width=800, height=500, top=200, left=300');void(0);"><%= image_tag "twitter.svg", class: "social-button" %></a>
+      <a onclick="javascript:window.open('http://www.facebook.com/sharer.php?u=<%= url_for([@post, {only_path: false}]) %>', '_blank', 'width=800, height=500, top=200, left=300');void(0);"><%= image_tag "facebook.svg", class: "social-button" %></a>
+      <a onclick="javascript:window.open('https://plus.google.com/share?url=<%= url_for([@post, {only_path: false}]) %>', '_blank', 'width=800, height=500, top=200, left=300');void(0);"><%= image_tag "google.svg", class: "social-button" %></a>
+      <a href="mailto:?subject=<%=@post.title%>&amp;body=<%= url_for([@post, {only_path: false}]) %>"><%= image_tag "email.svg", class: "social-button" %></a>
+    </div>
 
-<div class="share center">
-  <p class="share-label">Share this article</p>
-  <a onclick="javascript:window.open('http://twitter.com/share?text=<%= @post.title %> via @rachelokimoto - &amp;url=<%= url_for([@post, {only_path: false}]) %>', '_blank', 'width=800, height=500, top=200, left=300');void(0);"><%= image_tag "twitter.svg", class: "social-button" %></a>
-  <a onclick="javascript:window.open('http://www.facebook.com/sharer.php?u=<%= url_for([@post, {only_path: false}]) %>', '_blank', 'width=800, height=500, top=200, left=300');void(0);"><%= image_tag "facebook.svg", class: "social-button" %></a>
-  <a onclick="javascript:window.open('https://plus.google.com/share?url=<%= url_for([@post, {only_path: false}]) %>', '_blank', 'width=800, height=500, top=200, left=300');void(0);"><%= image_tag "google.svg", class: "social-button" %></a>
-  <a href="mailto:?subject=<%=@post.title%>&amp;body=<%= url_for([@post, {only_path: false}]) %>"><%= image_tag "email.svg", class: "social-button" %></a>
+    <%= render "discuss" %>
+
+    <%= link_to "Edit Post", edit_post_path(@post) %>
+    <%= link_to "Delete Post", @post, method: :delete, data: {confirm: "Are you sure you want to delete this post?"} %>
+    <%= link_to "Back to Blog", posts_path %>
+  </div>
 </div>
-
-<%= render "discuss" %>
-
-<%= link_to "Edit Post", edit_post_path(@post) %>
-<%= link_to "Delete Post", @post, method: :delete, data: {confirm: "Are you sure you want to delete this post?"} %>
-<%= link_to "Back to Blog", posts_path %>

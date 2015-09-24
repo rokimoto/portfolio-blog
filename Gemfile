@@ -48,6 +48,9 @@ gem 'friendly_id', '~> 5.1.0'
 # Tags
 gem 'acts-as-taggable-on', '~> 3.4'
 
+# Mail form
+gem 'mail_form', '~> 1.5.1'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 

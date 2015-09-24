@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
 
-  get 'static/about', to: 'static#about', as: :about
+  get 'contacts/new', to: 'contacts#new', path: :contact
+  post 'contacts', to: 'contacts#create'
 
-  get 'static/contact', to: 'static#contact', as: :contact
+  get 'static/about', to: 'static#about', as: :about
 
   get '/admin', to: 'sessions#new', as: :login
   post '/admin', to: 'sessions#create'

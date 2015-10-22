@@ -84,14 +84,25 @@
 
 .post-categories {
   margin: 15px 0;
+
+  a:hover {
+    text-decoration: none;
+    cursor: pointer;
+  }
 }
 
 .category {
   padding: 6px 10px;
   color: white;
-  background: rgba(0,0,0,.6);
+  background: #000;
   font-style: normal;
   text-transform: uppercase;
+  cursor: pointer;
+  opacity: .7;
+}
+
+.category:hover {
+  opacity: 1;
 }
 
 .posts.show {
@@ -100,12 +111,12 @@
   }
 
   .post-date {
-    margin: 18px 0;
+    margin: 16px 0;
   }
 
   .post-preview {
     font-size: 1.8rem;
-    margin: 8px 0;
+    margin: 16px 0;
   }
 
   .post-title {
@@ -173,4 +184,11 @@
   margin-bottom: 10px;
   display: inline-block;
   width: 100%;
+  text-decoration: none;
+}
+
+.sidebar-title:hover {
+  opacity: .8;
+  color: white;
+  text-decoration: none;
 }

@@ -1,3 +1,5 @@
+<div class="row">
+<div class="col-md-10 col-md-offset-1">
 <%= form_for @contact do |f| %>
 
 <div class="form-group">
@@ -13,7 +15,7 @@
 
 <div class="form-group">
 <%= f.label :message %>
-<%= f.text_area :message, class: "form-control", rows: "5" %>
+<%= f.text_area :message, class: "form-control", rows: "6" %>
 </div>
 
 <div class="hidden">
@@ -24,3 +26,5 @@
 <%= f.submit 'Send Message', class: 'btn' %>
 
 <% end %>
+</div>
+</div>

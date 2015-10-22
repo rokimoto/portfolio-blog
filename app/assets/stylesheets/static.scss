@@ -3,6 +3,14 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .static.about {
+  p {
+    margin: 15px 0;
+    font-size: 1.6rem;
+    line-height: 1.6;
+  }
+  h2 {
+    margin-top: 30px;
+  }
   ul {
     padding-left: 40px;
   }
